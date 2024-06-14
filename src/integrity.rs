@@ -61,7 +61,7 @@ impl std::str::FromStr for Integrity {
     /// assert_eq!(sri.to_string(), String::from("sha256-deadbeef"));
     /// ```
     fn from_str(s: &str) -> Result<Integrity, Self::Err> {
-        let mut hashes = String::from(s)
+        let mut hashes = s
             .split_whitespace()
             .map(|x| x.parse())
             .collect::<Result<Vec<Hash>, Self::Err>>()?;
